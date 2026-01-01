@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jonkon | Creating the Future</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FAVICON (optional, works even if missing) -->
+<link rel="icon" href="favicon.ico">
+
+<style>
+  :root {
+    --neon: #00bfff;
+    --dark: #05070a;
+  }
+
+  * {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #0b1020, var(--dark));
+    color: white;
+  }
+
+  /* NAVBAR */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+    background: rgba(5,7,10,0.95);
+    border-bottom: 1px solid rgba(0,191,255,0.3);
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-logo {
+    height: 42px;
+    filter: drop-shadow(0 0 10px rgba(0,191,255,0.7));
+  }
+
+  nav h2 {
+    margin: 0;
+    color: var(--neon);
+    letter-spacing: 2px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    opacity: 0.8;
+    font-weight: 500;
+  }
+
+  nav a:hover {
+    color: var(--neon);
+    opacity: 1;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 90px 20px;
+    text-align: center;
+  }
+
+  .hero-logo {
+    width: 220px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 25px rgba(0,191,255,0.9));
+    animation: glow 3s infinite alternate;
+  }
+
+  @keyframes glow {
+    from { filter: drop-shadow(0 0 15px rgba(0,191,255,0.6)); }
+    to { filter: drop-shadow(0 0 35px rgba(0,191,255,1)); }
+  }
+
+  .title {
+    font-size: 44px;
+    color: var(--neon);
+    text-shadow: 0 0 18px rgba(0,191,255,0.5);
+  }
+
+  .subtitle {
+    max-width: 650px;
+    margin: 20px auto 0;
+    color: #c7d6ff;
+    font-size: 17px;
+  }
+
+  /* SERVICES */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 60px auto 0;
+  }
+
+  .card {
+    background: linear-gradient(145deg, #0c1222, #070b15);
+    border: 1px solid rgba(0,191,255,0.25);
+    padding: 35px 20px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 0 30px rgba(0,191,255,0.35);
+    border-color: var(--neon);
+  }
+
+  .icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    color: #b5c7ff;
+    font-size: 14px;
+  }
+
+  /* DETAILS */
+  #details {
+    background: rgba(0,0,0,0.3);
+  }
+
+  footer {
+    padding: 35px;
+    text-align: center;
+    color: #7d8ab8;
+    border-top: 1px solid rgba(0,191,255,0.25);
+    font-size: 14px;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-left">
+    <img src="logo.png" alt="Jonkon Logo" class="nav-logo">
+    <h2>JONKON</h2>
+  </div>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+  <img src="logo.png" alt="Jonkon Logo" class="hero-logo">
+  <h1 class="title">Creating the Future</h1>
+  <p class="subtitle">
+    Jonkon builds personalized music, premium courses,
+    viral video clips, and custom games.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2 class="title">What We Build</h2>
+
+  <div class="grid">
+    <div class="card" onclick="openService('music')">
+      <div class="icon">🎵</div>
+      <h3>Music</h3>
+      <p>Personalized tracks starting at $60.</p>
+    </div>
+
+    <div class="card" onclick="openService('courses')">
+      <div class="icon">📘</div>
+      <h3>Courses</h3>
+      <p>Free PDF sample. Full version on Whop.</p>
+    </div>
+
+    <div class="card" onclick="openService('video')">
+      <div class="icon">🎬</div>
+      <h3>Video Clipping</h3>
+      <p>Instagram & YouTube content.</p>
+    </div>
+
+    <div class="card" onclick="openService('games')">
+      <div class="icon">🎮</div>
+      <h3>Games</h3>
+      <p>Custom-built games.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS -->
+<section id="details">
+  <h2 class="title" id="detailTitle">Select a Service</h2>
+  <p class="subtitle" id="detailText">
+    Click any service above to see details.
+  </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="title">Contact</h2>
+  <p class="subtitle">
+    Coming Soon 🚧  
+    Official contact details will be added.
+  </p>
+</section>
+
+<footer>
+  © 2025 Jonkon. Creating the Future.
+</footer>
+
+<script>
+function openService(type) {
+  const title = document.getElementById("detailTitle");
+  const text = document.getElementById("detailText");
+
+  if (type === "music") {
+    title.innerText = "Personalized Music";
+    text.innerText = "Custom music made for each buyer. Pricing starts at $60.";
+  }
+  if (type === "courses") {
+    title.innerText = "Courses";
+    text.innerText = "Free PDF samples available. Full courses sold via Whop.";
+  }
+  if (type === "video") {
+    title.innerText = "Video Clipping";
+    text.innerText = "High-quality clips optimized for Instagram, YouTube, and Shorts.";
+  }
+  if (type === "games") {
+    title.innerText = "Custom Games";
+    text.innerText = "We design and build custom games based on client ideas.";
+  }
+}
+</script>
+
+</body>
+</html>
